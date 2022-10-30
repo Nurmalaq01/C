@@ -1,0 +1,148 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node{
+	char nama[50];
+	char alamat[50];
+	int umur;
+	int nomor;
+	struct node *next, *data;
+};
+
+void insert();
+
+typedef struct node DATA_NODE;
+
+DATA_NODE *head, *first, *temp = 0, *prev, *next, *temp;
+char na[50];
+char al[50];
+int um;
+int no;
+typedef struct node nodes;
+
+void insert(int x){
+	printf("Total registration in this day : ");
+	scanf("%d",&no);
+	printf("Input nama : ");
+	scanf("%s",&na);
+	printf("Input alamat : ");
+	scanf("%s",&al);
+	printf("Input umur : ");
+	scanf("%d",&um);
+	
+	struct node *temp = new node();
+	temp -> data = x;
+	temp -> next =NULL;
+	if(head!=NULL){
+		struct node* = temp1 = head;
+		while(temp1 -> !=NULL){
+			temp1 = temp -> next;
+		}
+		temp1 -> next = temp;
+	}
+	else{
+		head = temp;
+	}
+}
+
+
+void tambahdepan(){
+	struct node *temp = head;
+	while(temp->alamat!=NULL){
+		temp = temp->next;
+	}
+	temp->next = head;
+}
+
+void ascending(){
+	struct node *temp = head;
+	while(temp->next!=NULL){
+		struct node *temp1 = new code();
+		temp1 = temp->next;
+		while(temp1!=head){
+			if(temp->data<temp->data){
+				swap(temp->data,temp1->data);
+			}
+			temp1 = temp1->next;
+		}
+		temp = temp->next;
+	}
+}
+
+void descending()
+	{
+		struct node*temp1 =new node();
+		temp1 = temp -> next ;
+		while (temp1 != head)
+		{
+			if(temp->data < temp -> data)
+			{
+				swap(temp->data , temp1 -> data);
+			}
+			temp1 =temp1 -> next;
+		}
+		temp = temp ->next;
+	}
+}
+
+void display()
+{
+	struct node*temp = head;
+	printf(" %d ", temp -> data);
+	temp= temp ->next;
+	while (temp != head)
+	{
+		printf("%d", temp ->data );
+		temp = temp -> next;
+	}
+}
+
+int main(){
+	int option = 0;
+	balik:;
+	system("cls");
+	printf("\t-------GOVERNANCE LIBRARY-------\n"
+	"Visitors Registration Menu : \n"
+	"1. Add the data\n"
+	"2. Show the data\n"
+	"3. Exit\n");
+	printf("Input your choice : ");
+	scanf("%d",&option);
+	
+	switch(option) {
+		case 1 :
+			display();
+			system("pause");
+			goto balik;
+			break;
+		case 2 :
+			int pilih;
+			printf("Choose the sorting menu : "
+			"1. Ascending\n"
+			"2. Descending\n");
+			printf("Input choice : ");
+			scanf("%d", &pilih);
+			switch(pilih) {
+				case 1 :
+					ascending();
+  					system("pause");
+  					goto balik;
+  					break;
+  				case 2 :
+  					descending();
+  					system("pause");
+  					goto balik;
+					  break;	
+			};
+			insert();
+			system("pause");
+			goto balik;
+			break;
+		case 3 :
+			return 0;
+      		default:
+        	break;
+		
+	}
+return 0;
+}
